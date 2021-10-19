@@ -56,7 +56,7 @@ const Navbar = () => {
         //     <Link to="/sign-up">SignUp</Link>
         //     <Link to="/login">Login</Link>
         //     <Link to="/space">Space</Link>
-        //     <Link to="/dashboard">Dashboard</Link>
+        //     <Link to="/my-spaces">My Spaces</Link>
         // </div>
     );
 }
