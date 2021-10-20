@@ -5,7 +5,6 @@ import useFetch from '../../../hooks/useFetch'
 import logo from '../../../resources/logo.svg';
 import { useState } from 'react';
 
-
 const MainNavbar = () => {
     const {REACT_APP_BACKEND_END_POINT} = process.env
     const [authToken, setAuthToken, removeAuthToken] = useCookies(['auth-token'])
