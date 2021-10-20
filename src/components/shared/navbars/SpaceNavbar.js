@@ -2,11 +2,8 @@ import { Link } from 'react-router-dom'
 import logo from '../../../resources/logo.svg';
 import { useState } from 'react';
 
-const SpaceNavbar = () => { 
+const SpaceNavbar = ({ MobileNavClicked }) => { 
     const [mobileClicked, setmobileClicked] = useState(false)
-    const MobileNavClicked = () => {
-        setmobileClicked(!mobileClicked)
-    }
 
     return(
         <nav className="bg-gray-100">
@@ -32,7 +29,7 @@ const SpaceNavbar = () => {
 
                     {/* <!-- mobile button goes here --> */}
                     <div className="md:hidden flex items-center">
-                        <button onClick={MobileNavClicked} className="mobile-menu-button">
+                        <button onClick={() => MobileNavClicked(mobileClicked, setmobileClicked)} className="mobile-menu-button">
                         <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>

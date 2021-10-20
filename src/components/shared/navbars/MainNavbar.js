@@ -1,21 +1,13 @@
 import { Link, useLocation } from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll'
-import { useCookies } from 'react-cookie';
-import useFetch from '../../../hooks/useFetch'
+import useUser from '../../../hooks/useUser';
 import logo from '../../../resources/logo.svg';
 import { useState } from 'react';
 
-const MainNavbar = () => {
-    const {REACT_APP_BACKEND_END_POINT} = process.env
-    const [authToken, setAuthToken, removeAuthToken] = useCookies(['auth-token'])
-    const { data, loading, error } = useFetch(`${REACT_APP_BACKEND_END_POINT}/user`, 'POST', {
-        'auth-token': authToken['auth-token']
-    }, {})
+const MainNavbar = ({ MobileNavClicked }) => {
+    const { data, loading, error } = useUser()
 
     const [mobileClicked, setmobileClicked] = useState(false)
-    const MobileNavClicked = () => {
-        setmobileClicked(!mobileClicked)
-    }
 
     let location = useLocation()
 
@@ -61,7 +53,7 @@ const MainNavbar = () => {
 
                     {/* <!-- mobile button goes here --> */}
                     <div className="md:hidden flex items-center">
-                        <button onClick={MobileNavClicked} className="mobile-menu-button">
+                        <button onClick={() => MobileNavClicked(mobileClicked, setmobileClicked)} className="mobile-menu-button">
                         <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>

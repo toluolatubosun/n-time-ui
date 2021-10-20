@@ -1,10 +1,13 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, Redirect } from 'react-router-dom'
 import logo from '../../../resources/logo.svg';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import useUser from '../../../hooks/useUser';
 
-const AuthNavbar = () => {
+const AuthNavbar = ({ MobileNavClicked }) => {
     let location = useLocation()
-    let navRoute, navName 
+    let navRoute, navName
+    
+    const { data, loading, error } = useUser()
 
     if( location.pathname == '/login' ){
         navRoute = '/sign-up'
@@ -15,10 +18,8 @@ const AuthNavbar = () => {
     }
 
     const [mobileClicked, setmobileClicked] = useState(false)
-    const MobileNavClicked = () => {
-        setmobileClicked(!mobileClicked)
-    }
 
+    if( !loading && data ) return <Redirect to="/my-spaces"/>
     return(
         <nav className="bg-gray-100">
             <div className="max-w-6xl mx-auto px-4">
@@ -42,7 +43,7 @@ const AuthNavbar = () => {
 
                     {/* <!-- mobile button goes here --> */}
                     <div className="md:hidden flex items-center">
-                        <button onClick={MobileNavClicked} className="mobile-menu-button">
+                        <button onClick={() => MobileNavClicked(mobileClicked, setmobileClicked)} className="mobile-menu-button">
                         <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>

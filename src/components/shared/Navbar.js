@@ -5,10 +5,12 @@ import MainNavbar from "./navbars/MainNavbar"
 import AuthNavbar from "./navbars/AuthNavbar"
 import SpaceNavbar from "./navbars/SpaceNavbar"
 
-const Navbar = () => {
-    
-    const location = useLocation()
+const MobileNavClicked = (mobileClicked, setmobileClicked) => {
+    setmobileClicked(!mobileClicked)
+}
 
+const Navbar = () => {
+    const location = useLocation()
     const[nav, setNav] = useState('MainNavbar')
 
     useEffect(() => {
@@ -23,16 +25,16 @@ const Navbar = () => {
 
     switch (nav) {
         case 'MainNavbar':
-            return <MainNavbar/>
+            return <MainNavbar MobileNavClicked={MobileNavClicked} />
         
         case 'SpaceNavbar':
-            return <SpaceNavbar/>
+            return <SpaceNavbar MobileNavClicked={MobileNavClicked} />
 
         case 'AuthNavbar':
-            return <AuthNavbar/>
+            return <AuthNavbar MobileNavClicked={MobileNavClicked} />
 
         default:
-            return <MainNavbar/>
+            return <MainNavbar MobileNavClicked={MobileNavClicked} />
     }
 }
 
