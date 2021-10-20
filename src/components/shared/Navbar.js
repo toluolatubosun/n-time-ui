@@ -6,14 +6,15 @@ import AuthNavbar from "./navbars/AuthNavbar"
 import SpaceNavbar from "./navbars/SpaceNavbar"
 
 const Navbar = () => {
+    
     const location = useLocation()
 
     const[nav, setNav] = useState('MainNavbar')
 
     useEffect(() => {
-        if( location.pathname == "/login" ||  location.pathname == "/sign-up" ){
+        if( ["/login", "/sign-up"].indexOf(location.pathname) > -1 ){
             setNav('AuthNavbar')
-        }else if( location.pathname == "/space" ||  location.pathname == "/my-spaces" ){
+        }else if( ["/space", "/my-spaces", "/join-space"].indexOf(location.pathname) > -1 ){
             setNav('SpaceNavbar')
         }else{
             setNav('MainNavbar')
@@ -23,19 +24,15 @@ const Navbar = () => {
     switch (nav) {
         case 'MainNavbar':
             return <MainNavbar/>
-            break;
         
         case 'SpaceNavbar':
             return <SpaceNavbar/>
-            break;
 
         case 'AuthNavbar':
             return <AuthNavbar/>
-            break;
 
         default:
             return <MainNavbar/>
-            break;
     }
 }
 
