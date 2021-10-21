@@ -18,10 +18,10 @@ function App() {
      
 	return (
 		<Router>
-            <div className="font-Montserrat">
+            <div className="font-Montserrat flex flex-col h-screen">
                 <Navbar />
 
-                <div className="content">
+                <div className="content flex-grow">
                     <Switch>
                         <Route exact path="/">
                             <Home/>

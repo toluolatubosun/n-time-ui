@@ -37,7 +37,7 @@ const AuthNavbar = ({ MobileNavClicked }) => {
                     {/* <!-- secondary nav --> */}
                     <div className="hidden md:flex items-center space-x-2">
                         <Link to={navRoute} className="py-1.5 px-4 ring-2 rounded ring-primary">{navName}</Link>
-                        <Link to="/home" className="py-2 px-4 bg-primary text-white rounded">Home</Link>
+                        <Link to="/" className="py-2 px-4 bg-primary text-white rounded">Home</Link>
                     </div>
                     
 
