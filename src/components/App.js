@@ -6,6 +6,7 @@ import Space from './Space'
 import MySpaces from './MySpaces'
 import JoinSpace from './JoinSpace'
 import NotFound from './NotFound'
+import CreateSpace from './CreateSpace'
 
 import Navbar from './shared/Navbar'
 import Footer from './shared/Footer'
@@ -46,6 +47,9 @@ function App() {
                         </ProtectedRoute>
 
                         <ProtectedRoute exact path="/join-space" component={JoinSpace}>
+                        </ProtectedRoute>
+
+                        <ProtectedRoute exact path="/create-space" component={CreateSpace}>
                         </ProtectedRoute>
 
                         <Route path="*">

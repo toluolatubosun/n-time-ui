@@ -23,6 +23,7 @@ const SpaceNavbar = ({ MobileNavClicked }) => {
                     <div className="hidden md:flex items-center space-x-2">
                         <Link to="/my-spaces" className="py-2 px-4">My Spaces</Link>
                         <Link to="/join-space" className="py-2 px-4">Join Space</Link>
+                        <Link to="/create-space" className="py-2 px-4">Create Space</Link>
                         <Link to="/logout"className="py-2 px-4 bg-primary text-white rounded">Logout</Link>
                     </div>
                     
@@ -43,6 +44,7 @@ const SpaceNavbar = ({ MobileNavClicked }) => {
             <div className={mobileClicked ? "mobile-menu md:hidden" : "mobile-menu hidden md:hidden"}>
                 <Link to="/my-spaces" className="block py-2 px-4 text-m hover:bg-gray-200">My Spaces</Link>
                 <Link to="/join-space" className="block py-2 px-4 text-m hover:bg-gray-200">Join Space</Link>
+                <Link to="/create-space" className="block py-2 px-4 text-m hover:bg-gray-200">Create Space</Link>
                 <Link to="/logout" className="block py-2 px-4 text-m hover:bg-gray-200">Logout</Link>
             </div>
         </nav>
