@@ -1,4 +1,5 @@
 import not_found from '../resources/not_found.svg'
+import { Link } from 'react-router-dom'
 
 const NotFound = () => {
     return(   
@@ -8,7 +9,7 @@ const NotFound = () => {
             <p className="text-base text-gray-600 py-2 text-center">Sorry! We could not find you the page you are looking for. Please check URL in address bar and try again.</p>
 
             <div className="flex md:flex-row flex-col items-center justify-center md:gap-8 mt-4 mb-12 w-full">
-                <button className="p-4 text-base text-center text-white md:w-auto md:mb-0 mb-4 w-full bg-secondary border rounded-md hover:bg-primary">Get back to Homepage</button>
+                <Link to="/" className="p-4 text-base text-center text-white md:w-auto md:mb-0 mb-4 w-full bg-secondary border rounded-md hover:bg-primary">Get back to Homepage</Link>
             </div>
 
             <div className="hidden md:grid place-content-center lg:w-1/3 w-1/2">

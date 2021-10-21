@@ -1,8 +1,9 @@
 import { Redirect, Route } from "react-router-dom";
 import useUser from "../../hooks/useUser";
+import { useState } from 'react'
+import NotConnect from "../shared/NotConnect";
 
 function ProtectedRoute({ component: Component, ...restOfProps }){
-
     const { data, loading, error } = useUser()
 
     return (
@@ -11,7 +12,11 @@ function ProtectedRoute({ component: Component, ...restOfProps }){
             render={(props) =>
                 { 
                     if( !loading ){
-                        return data ? <Component {...props} /> : <Redirect to='login'/>
+                        if( data ) return <Component {...props} />
+                        if( error ) {
+                            if( error.message === 'Failed to fetch') return <NotConnect/>
+                            return <Redirect to='login'/>
+                        } 
                     }else{
                         return <div>Loading...</div>
                     } 
