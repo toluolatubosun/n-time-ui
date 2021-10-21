@@ -12,8 +12,7 @@ const MainNavbar = ({ MobileNavClicked }) => {
     let location = useLocation()
 
     return ( 
-      
-        <nav className="bg-gray-100">
+        <nav className="bg-gray-100 fixed inset-x-0 z-10">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="flex justify-between">
                     <div className="flex space-x-4">
@@ -28,9 +27,9 @@ const MainNavbar = ({ MobileNavClicked }) => {
                         {/* <!-- primary nav --> */}
                         {   ( location.pathname === '/') &&
                             <div className="hidden md:flex items-center space-x-1">
-                                <ScrollLink to="about" offset={50} smooth={true} duration={500} className="py-5 cursor-pointer px-3 text-gray-700 hover:text-gray-900">About</ScrollLink>
-                                <ScrollLink to="how-to-use" offset={50} smooth={true} duration={500} className="py-5 cursor-pointer px-3 text-gray-700 hover:text-gray-900">How to Use</ScrollLink>
-                                <ScrollLink to="contact" offset={50} smooth={true} duration={500} className="py-5 cursor-pointer px-3 text-gray-700 hover:text-gray-900">Contact</ScrollLink>
+                                <ScrollLink to="about" offset={50} smooth={true} duration={1000} className="py-5 cursor-pointer px-3 text-gray-700 hover:text-gray-900">About</ScrollLink>
+                                <ScrollLink to="how-to-use" offset={50} smooth={true} duration={1000} className="py-5 cursor-pointer px-3 text-gray-700 hover:text-gray-900">How to Use</ScrollLink>
+                                <ScrollLink to="contact" offset={50} smooth={true} duration={1000} className="py-5 cursor-pointer px-3 text-gray-700 hover:text-gray-900">Contact</ScrollLink>
                             </div>
                         }
                         
@@ -68,9 +67,9 @@ const MainNavbar = ({ MobileNavClicked }) => {
                 {
                     ( location.pathname === '/') &&
                     <div>
-                        <ScrollLink to="about" offset={50} smooth={true} duration={500} className="cursor-pointer block py-2 px-4 text-m hover:bg-gray-200">About</ScrollLink>
-                        <ScrollLink to="how-to-use" offset={50} smooth={true} duration={500} className="cursor-pointer block py-2 px-4 text-m hover:bg-gray-200">How to Use</ScrollLink>
-                        <ScrollLink to="contact" offset={50} smooth={true} duration={500} className="cursor-pointer block py-2 px-4 text-m hover:bg-gray-200">Contact</ScrollLink>
+                        <ScrollLink to="about" offset={50} smooth={true} duration={1000} className="cursor-pointer block py-2 px-4 text-m hover:bg-gray-200">About</ScrollLink>
+                        <ScrollLink to="how-to-use" offset={50} smooth={true} duration={1000} className="cursor-pointer block py-2 px-4 text-m hover:bg-gray-200">How to Use</ScrollLink>
+                        <ScrollLink to="contact" offset={50} smooth={true} duration={1000} className="cursor-pointer block py-2 px-4 text-m hover:bg-gray-200">Contact</ScrollLink>
                     </div>
                 }
                 {   

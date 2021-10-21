@@ -21,7 +21,7 @@ const AuthNavbar = ({ MobileNavClicked }) => {
 
     if( !loading && data ) return <Redirect to="/my-spaces"/>
     return(
-        <nav className="bg-gray-100">
+        <nav className="bg-gray-100 fixed inset-x-0 z-10">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="flex justify-between">
                     <div className="flex space-x-4">

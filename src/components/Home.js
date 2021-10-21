@@ -1,7 +1,21 @@
 import work_from_anywhere from '../resources/working_from_anywhere.svg'
 import { Link as ScrollLink } from 'react-scroll'
+import hello from '../resources/hello.svg'
+import { FaSpellCheck, FaRocket, FaRegLaughBeam, FaCheckCircle } from "react-icons/fa";
+import { useState } from 'react';
 
 const Home = () => {
+    const [showAlert, setShowAlert] = useState(false)
+
+    const CopyToClipboard = () => {
+        navigator.clipboard.writeText('0xc426df2251D72066FCccc2f338D737801eBf6ce6');
+        setShowAlert(true)
+    }
+    
+    const closeAlert = () => {
+        setShowAlert(false)
+    }
+
     return(
         <div>
             <main className="bg-white font-open-sans">
@@ -22,12 +36,12 @@ const Home = () => {
                 </div>
             </main>
 
-            <div id="about" className="md:mt-16 mb-28 md:grid md:grid-cols-6 md:flex md:items-center">
-                <div className="md:col-span-2">
+            <div id="about" className="lg:mt-16 mb-28 lg:grid lg:grid-cols-6 lg:flex lg:items-center">
+                <div className="lg:col-span-2">
                     <h1 className="text-center text-5xl font-bold text-secondary tracking-wider">About</h1>
                     <p className="text-center text-xl">the story...</p>
                 </div>
-                <div className="mt-4 md:col-span-4">
+                <div className="mt-10 lg:col-span-4">
                     <div className="relative py-3 sm:max-w-xl sm:mx-auto w-screen">
                         <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
                         <div className="filter drop-shadow-lg relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl w-full sm:p-20">
@@ -54,10 +68,97 @@ const Home = () => {
 
             <div id="how-to-use" className="mt-28 mb-10">
                 <h1 className="text-center text-5xl font-bold text-secondary tracking-wider">How To Use</h1>
+                <p className="text-center text-xl">the steps...</p>
+                
+                <div className="rounded-md shadow-lg bg-gradient-to-t from-gray-100 to-white md:flex md:space-x-10 md:grid md:grid-cols-5 items-center py-8 px-8 md:px-16 md:mx-20 mt-16">
+                    <div className="md:col-span-1">
+                        <div className="grid justify-items-center mb-8">
+                            <div>
+                                <FaSpellCheck size={120} className="text-secondary text-8xl md:text-9xl"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="md:p-10 md:col-span-4">
+                        <h1 className="text-center sm:text-left text-2xl font-bold text-primary tracking-wider mb-4">SignUp and Login</h1>
+                        <p>The first thing you need to do is to signup, or login is you already have an account</p> 
+                        <p>After completeing this step you now have access to join and create spaces (classes, events or whatever)</p>
+                        <p>You also get email notifications regarding your spaces</p>
+                    </div>
+                </div>
+
+                <div className="rounded-md shadow-lg bg-gradient-to-t from-gray-100 to-white md:flex md:space-x-10 md:grid md:grid-cols-5 items-center py-8 px-8 md:px-16 md:mx-20 mt-16">
+                    <div className="md:col-span-1">
+                        <div className="grid justify-items-center mb-8">
+                            <div>
+                                <FaRocket className="text-secondary text-8xl md:text-9xl"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="md:p-10 md:col-span-4 md:row-start-1">
+                        <h1 className="text-center sm:text-left text-2xl font-bold text-primary tracking-wider mb-4">Create or Join a Space</h1>
+                        <p>Spaces can be anything from classes to events and much more</p>
+                        <p>When you create a space a unique 8-digit code is generated; you can share this code with your friends so they can join the space</p>
+                        <p>Request space code from friends to join their space</p>
+                    </div>
+                </div>
+
+                <div className="rounded-md shadow-lg bg-gradient-to-t from-gray-100 to-white md:flex md:space-x-10 md:grid md:grid-cols-5 items-center py-8 px-8 md:px-16 md:mx-20 mt-16">
+                    <div className="md:col-span-1">
+                        <div className="grid justify-items-center mb-8">
+                            <div>
+                                <FaRegLaughBeam className="text-secondary text-8xl md:text-9xl"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="md:p-10 md:col-span-4">
+                        <h1 className="text-center sm:text-left text-2xl font-bold text-primary tracking-wider mb-4">Enjoy and have fun!!!</h1>
+                        <p>Now you can view time and venue changes on your space. Track wheter your space has begun.</p>
+                        <p>And also update your space</p>
+                    </div>
+                </div>
+                 
             </div>
 
-            <div id="contact">
+            <div id="contact" className="mt-28 mb-28">
+                <h1 className="text-center text-5xl font-bold text-secondary tracking-wider">Contact</h1>
+                <p className="text-center text-xl">the man...</p>
 
+                <div id="about" className="mt-20 mx-8">
+                    <div className="mt-10 flex items-center">
+                        <img className="mx-auto" src={hello}/>
+                    </div>
+
+                    <div className="mt-10">
+                        <h1 className="text-center text-4xl font-semibold text-secondary tracking-wider">Send me an email</h1>
+                        <p className="text-center text-primary text-xl m-2">
+                            <a target="_blank" href="mailto:toluolatubosun@gmail.com">toluolatubosun@gmail.com</a>
+                        </p>
+                    </div>
+
+                    <div className="mt-10">
+                        <h1 className="text-center text-4xl font-semibold text-secondary tracking-wider">Donate Cryptocurrency</h1>
+                        <p className="text-center text-xl m-2">Send any coin on the Binance Smart Chain Network</p>
+                        <div onClick={CopyToClipboard} className="text-center text-primary truncate text-xl m-2">0xc426df2251D72066FCccc2f338D737801eBf6ce6</div>
+                    </div>
+
+                    { showAlert &&
+                        <div className="grid place-items-center">
+                            <div className="text-white px-6 py-4 border-0 md:w-1/3 rounded relative mb-4 bg-primary">
+                                <span className="text-xl inline-block mr-5 align-middle">
+                                    <FaCheckCircle/>
+                                </span>
+                                <span className="inline-block align-middle mr-8">
+                                    Address copied to clipboard
+                                </span>
+                                <button onClick={closeAlert} className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none">
+                                    <span>×</span>
+                                </button>
+                            </div>
+                        </div>
+                    }
+                    
+                    
+                </div>
             </div>
         </div>
     )
