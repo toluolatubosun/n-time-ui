@@ -19,7 +19,7 @@ const MainNavbar = ({ MobileNavClicked }) => {
                         {/* <!-- logo --> */}
                         <div>
                             <Link to="/" className="flex items-center text-xl py-4 px-2 text-gray-700 hover:text-gray-900">
-                                <img className="h-10 w-10 mr-1 text-blue-400" src={logo} alt="logo" />
+                                <img className="transform -rotate-90 h-10 w-10 mr-1 text-blue-400" src={logo} alt="logo" />
                                 <span className="font-bold">N Time</span>
                             </Link>
                         </div>

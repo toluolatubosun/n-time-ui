@@ -5,8 +5,8 @@ const Footer = () => {
     return(
         <footer className="bg-secondary w-full py-12 px-4 m-auto">
             <div aria-label="footer" className="focus:outline-none mx-auto container flex flex-col items-center justify-center">
-                <div aria-label="n time logo" role="img">
-                    <img src={logo} className="focus:outline-none h-44 w-44 mr-1 text-blue-400"></img>
+                <div aria-label="n time logo" className="mt-4 mb-8" role="img">
+                    <img src={logo} className="transform -rotate-90 focus:outline-none h-44 w-44 mr-1 text-blue-400"></img>
                 </div>
                 <div className="text-black flex flex-col md:items-center f-f-l pt-3">
                     <h1 className="focus:outline-none text-2xl text-white font-black text-center">N Time</h1>
