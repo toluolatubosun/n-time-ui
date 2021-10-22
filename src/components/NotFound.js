@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const NotFound = () => {
     return(   
-        <div className="flex flex-col items-center justify-center py-24 lg:py-12 md:px-16 px-4">
+        <div className="mt-10 md:mt-20 flex flex-col items-center justify-center py-24 lg:py-12 md:px-16 px-4">
             <h1 className="text-7xl font-bold text-primary pb-2">404</h1>
             <h2 className="lg:text-5xl md:text-4xl text-2xl font-bold text-gray-800 py-2">This Page Does Not Exist</h2>
             <p className="text-base text-gray-600 py-2 text-center">Sorry! We could not find you the page you are looking for. Please check URL in address bar and try again.</p>

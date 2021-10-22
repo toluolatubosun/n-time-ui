@@ -9,7 +9,7 @@ const AuthNavbar = ({ MobileNavClicked }) => {
     
     const { data, loading, error } = useUser()
 
-    if( location.pathname == '/login' ){
+    if( location.pathname === '/login' ){
         navRoute = '/sign-up'
         navName = 'SignUp'
     }else{
