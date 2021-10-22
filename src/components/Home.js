@@ -26,7 +26,7 @@ const Home = () => {
                             <ul>
                                 <li>Show up to events at the right time</li>
                                 <li>Keep track of the venue</li>
-                                <li>Save time, waiting endlessly for the event to begin</li>
+                                <li>Save time, waiting endlessly for an event to begin</li>
                             </ul>
                         </div>
                     </div>
