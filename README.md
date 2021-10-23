@@ -16,5 +16,4 @@ REACT_APP_BACKEND_END_POINT=http://localhost:8000/api
 - This navbar has to do with anything that involves spaces
 
 Next Steps
-- Space
-- Done :)
+- Delete Space UI Implementation

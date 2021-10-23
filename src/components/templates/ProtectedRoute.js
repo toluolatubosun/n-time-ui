@@ -14,7 +14,7 @@ function ProtectedRoute({ component: Component, ...restOfProps }){
                     if( !loading ){
                         if( data ) return <Component {...props} />
                         if( error ) {
-                            if( error.message === 'Failed to fetch') return <NotConnect/>
+                            if( error.message === 'Failed to fetch') return <NotConnect message={'No Internet Connection'}/>
                             return <Redirect to='login'/>
                         } 
                     }else{

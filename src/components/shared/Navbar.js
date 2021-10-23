@@ -16,7 +16,7 @@ const Navbar = () => {
     useEffect(() => {
         if( ["/login", "/sign-up"].indexOf(location.pathname) > -1 ){
             setNav('AuthNavbar')
-        }else if( ["/space", "/my-spaces", "/join-space", "/create-space"].indexOf(location.pathname) > -1 ){
+        }else if( ["/update-space", "/my-spaces", "/join-space", "/create-space"].indexOf(location.pathname) > -1 || location.pathname.match(/^\/space\//g) ){
             setNav('SpaceNavbar')
         }else{
             setNav('MainNavbar')

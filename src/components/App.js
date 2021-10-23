@@ -6,6 +6,7 @@ import Space from './Space'
 import MySpaces from './MySpaces'
 import JoinSpace from './JoinSpace'
 import NotFound from './NotFound'
+import UpdateSpace from './UpdateSpace'
 import CreateSpace from './CreateSpace'
 
 import Navbar from './shared/Navbar'
@@ -50,6 +51,9 @@ function App() {
                         </ProtectedRoute>
 
                         <ProtectedRoute exact path="/space/:spaceCode" component={Space}>
+                        </ProtectedRoute>
+
+                        <ProtectedRoute exact path="/update-space" component={UpdateSpace}>
                         </ProtectedRoute>
 
                         <Route path="*">

@@ -3,6 +3,7 @@ import taken from '../resources/taken.svg'
 import { Link } from 'react-router-dom'
 import SpaceList from './templates/SpaceList'
 import Loading from './shared/Loading'
+import NotConnect from './shared/NotConnect'
 
 const MySpaces = () => {
     const { data, loading, error } = useMySpaces()
@@ -12,7 +13,10 @@ const MySpaces = () => {
             { loading &&
                 <Loading/>
             }
-            { data && ( data.data.length === 0) &&
+            { !loading && error &&
+                <NotConnect message={error.message}/>
+            }
+            { !loading && data && ( data.data.length === 0) &&
                 <div className="flex flex-col items-center justify-center py-24 lg:py-12 md:px-16 px-4">
                     <p className="text-2xl text-center text-secondary font-semibold p-3">You are not in any space</p>
                     <p className="text-lg text-center">...maybe they were stolen by aliens</p>
@@ -26,7 +30,7 @@ const MySpaces = () => {
                     </div>
                 </div>
             }
-            { data && ( data.data.length != 0) &&
+            { !loading && data && ( data.data.length != 0) &&
                 <div className="mt-28">
                     <h1 className="text-center text-4xl font-bold text-secondary tracking-wider mb-4">Your Spaces</h1>
                     <SpaceList spaces={data.data} />

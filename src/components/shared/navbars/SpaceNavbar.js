@@ -24,7 +24,7 @@ const SpaceNavbar = ({ MobileNavClicked }) => {
                         <Link to="/my-spaces" className="py-2 px-4">My Spaces</Link>
                         <Link to="/join-space" className="py-2 px-4">Join Space</Link>
                         <Link to="/create-space" className="py-2 px-4">Create Space</Link>
-                        <Link to="/logout"className="py-2 px-4 bg-primary text-white rounded">Logout</Link>
+                        <Link to="/logout" className="py-2 px-4 bg-primary text-white rounded">Logout</Link>
                     </div>
                     
 

@@ -1,4 +1,4 @@
-import loading from '../../resources/server_down.svg'
+import loading from '../../resources/loading.svg'
 
 const Loading = () => {
    
