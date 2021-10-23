@@ -68,7 +68,7 @@ const SignUp = () => {
     if( data ){
         setAuthToken('auth-token', data.token)
         setTimeout(() => {
-            history.go('/my-spaces')
+            history.replace('/my-spaces')
         }, 500) 
     }
 

@@ -43,13 +43,13 @@ function App() {
 						<ProtectedRoute exact path="/my-spaces" component={MySpaces}>
                         </ProtectedRoute>
 
-						<ProtectedRoute exact path="/space/:spaceCode" component={Space}>
-                        </ProtectedRoute>
-
                         <ProtectedRoute exact path="/join-space" component={JoinSpace}>
                         </ProtectedRoute>
 
                         <ProtectedRoute exact path="/create-space" component={CreateSpace}>
+                        </ProtectedRoute>
+
+                        <ProtectedRoute exact path="/space/:spaceCode" component={Space}>
                         </ProtectedRoute>
 
                         <Route path="*">
