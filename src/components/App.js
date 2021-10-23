@@ -17,7 +17,7 @@ import ProtectedRoute from './templates/ProtectedRoute'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
-     
+    
 	return (
 		<Router>
             <div className="font-Montserrat flex flex-col h-screen">

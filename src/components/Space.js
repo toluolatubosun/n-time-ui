@@ -2,7 +2,6 @@ import useSpace from "../hooks/useSpace"
 import Loading from "./shared/Loading"
 import NotConnect from "./shared/NotConnect"
 import { useParams } from "react-router"
-import { useState } from "react"
 import { FaMapMarkerAlt, FaRegClock, FaRibbon, FaUserFriends } from "react-icons/fa";
 import { Link } from "react-router-dom"
 

@@ -7,7 +7,7 @@ import NotConnect from './shared/NotConnect'
 
 const MySpaces = () => {
     const { data, loading, error } = useMySpaces()
-
+    
     return(
         <div className="mt-20 mb-20">
             { loading &&

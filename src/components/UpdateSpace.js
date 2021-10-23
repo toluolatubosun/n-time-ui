@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useCookies } from 'react-cookie';
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 
 const UpdateSpace = (props) => {
-    let history = useHistory()
     const {REACT_APP_BACKEND_END_POINT} = process.env
     const [authToken, setAuthToken, removeAuthToken] = useCookies(['auth-token'])
-
+    let history = useHistory()
+    
     // form inputs
     let local = new Date(props.location.state.startDateTime)
     let dateTimeLocalValue = (new Date(local.getTime() - local.getTimezoneOffset() * 60000).toISOString()).slice(0, -1);

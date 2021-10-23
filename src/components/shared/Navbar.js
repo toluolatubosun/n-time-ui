@@ -14,6 +14,7 @@ const Navbar = () => {
     const[nav, setNav] = useState('MainNavbar')
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         if( ["/login", "/sign-up"].indexOf(location.pathname) > -1 ){
             setNav('AuthNavbar')
         }else if( ["/update-space", "/my-spaces", "/join-space", "/create-space"].indexOf(location.pathname) > -1 || location.pathname.match(/^\/space\//g) ){
