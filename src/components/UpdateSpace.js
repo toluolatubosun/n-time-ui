@@ -8,11 +8,12 @@ const UpdateSpace = (props) => {
     let history = useHistory()
     
     // form inputs
-    let local = new Date(props.location.state.startDateTime)
+    let local = new Date(props.location.state ? props.location.state.startDateTime : null)
     let dateTimeLocalValue = (new Date(local.getTime() - local.getTimezoneOffset() * 60000).toISOString()).slice(0, -1);
-    const [state, setState] = useState(props.location.state.state)
-    const [venue, setVenue] = useState(props.location.state.venue)
-    const [startDateTime, setStartDateTime] = useState(dateTimeLocalValue)
+    const [name, setName] = useState(props.location.state ? props.location.state.name : '')
+    const [state, setState] = useState(props.location.state ? props.location.state.state : '')
+    const [venue, setVenue] = useState(props.location.state ? props.location.state.venue : '')
+    const [startDateTime, setStartDateTime] = useState(props.location.state ? dateTimeLocalValue : '')
 
     // form states
     const [formData, setFormData] = useState(null)
@@ -76,11 +77,15 @@ const UpdateSpace = (props) => {
         }, 500) 
     }
 
+    if( !props.location.state ){
+        return <Redirect to="/"/>
+    }
+
     return(
         <div>
             <div className="min-h-screen flex flex-col justify-center py-36 px-6 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-md">
-                    <h2 className="mt-6 text-center text-3xl font-extrabold text-secondary">Update "{props.location.state.name}" Space</h2>
+                    <h2 className="mt-6 text-center text-3xl font-extrabold text-secondary">Update "{name}" Space</h2>
                     <p className="mt-2 text-center text-sm text-gray-600 max-w">
                     Keep your friends informed
                     </p>
