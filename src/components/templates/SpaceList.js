@@ -28,10 +28,10 @@ const SpaceList = ({ spaces }) => {
             <div key={space.space.spaceCode} >
                 <Link to={`/space/${space.space.spaceCode}`}>
                     <div className="shadow rounded bg-gradient-to-t from-gray-100 to-white mx-4 md:mx-20 mb-4 md:mb-10 p-4 md:p-10">
-                        <h1 className="text-secondary text-2xl md:text-3xl font-semibold">{space.space.name}</h1>
+                        <h1 className="text-secondary text-2xl md:text-3xl font-semibold truncate">{space.space.name}</h1>
                         <div className="flex md:text-lg items-center space-x-4 mt-4">
                             <FaMapMarkerAlt/>
-                            <p>{space.space.venue}</p>
+                            <p className="truncate ">{space.space.venue}</p>
                         </div>
                         <div className="flex  md:text-lg items-center space-x-4 mt-4">
                             <FaRegClock/>

@@ -115,7 +115,7 @@ const CreateSpace = () => {
                         </div>
 
                         <div>
-                            <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded shadow-sm text-sm font-medium text-white bg-secondary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">Sign Up</button>
+                            <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded shadow-sm text-sm font-medium text-white bg-secondary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">Create Space</button>
                         </div>
 
                         { errorMessage &&
@@ -123,7 +123,7 @@ const CreateSpace = () => {
                         }
 
                         { data &&
-                            <div className="text-white px-8 py-4 border-0 rounded relative mb-4 bg-green-500">Space Created. Redirecting</div>
+                            <div className="text-white px-8 py-4 border-0 rounded relative mb-4 bg-green-500">Space Created. Redirecting...</div>
                         }
 
                         { formLoading &&

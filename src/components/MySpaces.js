@@ -1,15 +1,17 @@
 import useMySpaces from '../hooks/useMySpaces'
 import taken from '../resources/taken.svg'
-import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import SpaceList from './templates/SpaceList'
+import Loading from './shared/Loading'
 
 const MySpaces = () => {
-    let history = useHistory()
     const { data, loading, error } = useMySpaces()
 
     return(
         <div className="mt-20 mb-20">
+            { loading &&
+                <Loading/>
+            }
             { data && ( data.data.length === 0) &&
                 <div className="flex flex-col items-center justify-center py-24 lg:py-12 md:px-16 px-4">
                     <p className="text-2xl text-center text-secondary font-semibold p-3">You are not in any space</p>

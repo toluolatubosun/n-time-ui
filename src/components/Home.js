@@ -138,7 +138,7 @@ const Home = () => {
                     <div className="mt-10">
                         <h1 className="text-center text-4xl font-semibold text-secondary tracking-wider">Donate Cryptocurrency</h1>
                         <p className="text-center text-xl m-2">Send any coin on the Binance Smart Chain Network</p>
-                        <div onClick={CopyToClipboard} className="text-center text-primary truncate text-xl m-2">0xc426df2251D72066FCccc2f338D737801eBf6ce6</div>
+                        <div onClick={CopyToClipboard} className="cursor-pointer text-center text-primary truncate text-xl m-2">0xc426df2251D72066FCccc2f338D737801eBf6ce6</div>
                     </div>
 
                     { showAlert &&
