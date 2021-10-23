@@ -12,14 +12,9 @@ const NotConnect = () => {
                 <button onClick={() => history.go(0)} className="p-4 text-base text-center text-white md:w-auto md:mb-0 mb-4 w-full bg-secondary border rounded-md hover:bg-primary">Let's Reload this page</button>
             </div>
 
-            <div className="hidden md:grid place-content-center w-2/4">
+            <div className="grid md:grid place-content-center md:w-2/4">
                 <img src={server_down} alt="girl in an underconstruction site" />
             </div>
-
-            <div className="md:hidden grid place-content-center">
-                <img src={server_down} alt="girl in an underconstruction site" />
-            </div>
-            
         </div>
     )
 }

@@ -131,7 +131,7 @@ const Home = () => {
                     <div className="mt-10">
                         <h1 className="text-center text-4xl font-semibold text-secondary tracking-wider">Send me an email</h1>
                         <p className="text-center text-primary text-xl m-2">
-                            <a target="_blank" href="mailto:toluolatubosun@gmail.com">toluolatubosun@gmail.com</a>
+                            <a target="_blank" rel="noreferrer" href="mailto:toluolatubosun@gmail.com">toluolatubosun@gmail.com</a>
                         </p>
                     </div>
 

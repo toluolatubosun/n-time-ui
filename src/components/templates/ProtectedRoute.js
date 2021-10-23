@@ -1,7 +1,7 @@
 import { Redirect, Route } from "react-router-dom";
 import useUser from "../../hooks/useUser";
-import { useState } from 'react'
 import NotConnect from "../shared/NotConnect";
+import Loading from "../shared/Loading";
 
 function ProtectedRoute({ component: Component, ...restOfProps }){
     const { data, loading, error } = useUser()
@@ -18,7 +18,7 @@ function ProtectedRoute({ component: Component, ...restOfProps }){
                             return <Redirect to='login'/>
                         } 
                     }else{
-                        return <div>Loading...</div>
+                        return <Loading/>
                     } 
                 }
                 

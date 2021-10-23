@@ -12,11 +12,7 @@ const NotFound = () => {
                 <Link to="/" className="p-4 text-base text-center text-white md:w-auto md:mb-0 mb-4 w-full bg-secondary border rounded-md hover:bg-primary">Get back to Homepage</Link>
             </div>
 
-            <div className="hidden md:grid place-content-center lg:w-1/3 w-1/2">
-                <img src={not_found} alt="girl in an underconstruction site" />
-            </div>
-
-            <div className="md:hidden grid place-content-center">
+            <div className="grid md:grid place-content-center lg:w-1/3">
                 <img src={not_found} alt="girl in an underconstruction site" />
             </div>
         </div>
