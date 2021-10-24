@@ -2,18 +2,21 @@
 
 ## Enviroment variables
 REACT_APP_BACKEND_END_POINT=http://localhost:8000/api
+```
+Live URL set in CD
+```
 
 ## Navigation
 
-### MainNavbar
+## MainNavbar
 - This primaryly for the home screen but can work for other screens
 
-### AuthNavbar
+## AuthNavbar
 - This is the Navbar for the login and signup screen 
 - It redirects if user is already logged-in
 
-### SpaceNavbar
+## SpaceNavbar
 - This navbar has to do with anything that involves spaces
 
-Next Steps
+## Next Steps
 - Delete Space UI Implementation
