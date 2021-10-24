@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom'
 import { FaMapMarkerAlt, FaRegClock, FaRibbon } from "react-icons/fa";
+import DateFormater from '../../utils/DateFormater';
 
 const SpaceList = ({ spaces }) => {
     const spaceItems = spaces.map((space) => {
-        // convert from utc to local timezone
-        let local = new Date(space.space.startDateTime)
         let state = ''
         switch (space.space.state) {
             case 0:
@@ -35,7 +34,7 @@ const SpaceList = ({ spaces }) => {
                         </div>
                         <div className="flex  md:text-lg items-center space-x-4 mt-4">
                             <FaRegClock/>
-                            <p className="tracking-wider md:tracking-widest">{local.getDay()}/{local.getMonth() + 1}/{local.getFullYear()} {local.getHours()}:{local.getMinutes() < 10 ? '0'+local.getMinutes() : local.getMinutes()}</p>
+                            <p className="tracking-wider md:tracking-widest">{DateFormater(space.space.startDateTime)}</p>
                         </div>
                         <div className="flex  md:text-lg items-center space-x-4 mt-4">
                             <FaRibbon/>

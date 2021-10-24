@@ -4,7 +4,8 @@ import NotConnect from "./shared/NotConnect"
 import { useParams, useHistory } from "react-router"
 import { useCookies } from 'react-cookie';
 import { useState } from "react";
-import { FaMapMarkerAlt, FaRegClock, FaRibbon, FaUserFriends } from "react-icons/fa";
+import DateFormater from "../utils/DateFormater";
+import { FaMapMarkerAlt, FaRegClock, FaRibbon, FaUserFriends, FaCheckCircle } from "react-icons/fa";
 import { Link } from "react-router-dom"
 
 const Space = () => {
@@ -15,14 +16,17 @@ const Space = () => {
     const {REACT_APP_BACKEND_END_POINT} = process.env
     const [authToken, setAuthToken, removeAuthToken] = useCookies(['auth-token'])
 
+    const [showAlert, setShowAlert] = useState(false)
+    const closeAlert = () => {
+        setShowAlert(false)
+    }
+
     const [leaveResponse, setLeaveResponse] = useState(null)
     const [errorLeaving, setErrorLeaving] = useState(null)
     const [leaving, setLeaving] = useState(false)
 
-    let local, state
+    let state
     if( data ) {
-        local = new Date(data.data.startDateTime)
-
         switch (data.data.state) {
             case 0:
                 state = 'Not Started'
@@ -81,6 +85,17 @@ const Space = () => {
         })
     }
 
+    const copySpaceCode = () => {
+        navigator.clipboard.writeText(`
+N Time
+Space Name: ${data.data.name}
+Space Code: ${data.data.spaceCode}
+Venue: ${data.data.venue}
+Time: ${DateFormater(data.data.startDateTime)}
+`);
+        setShowAlert(true)
+    }
+
     if( leaveResponse ){
         setTimeout(() => {
             history.replace('/my-spaces')
@@ -99,32 +114,57 @@ const Space = () => {
                 data &&
                 <div className="mt-24">
                     <div className="mx-4 md:mx-20 mb-4 md:mb-10 p-4 md:p-10">
-                        <h1 className="text-secondary text-center text-3xl md:text-5xl mb-8 font-semibold truncate">{data.data.name}</h1>
+                        <h1 className="text-secondary text-center text-3xl md:text-5xl mb-8 font-semibold">{data.data.name}</h1>
                         
+                        <div className="md:grid md:place-items-center">
+                            <div className="flex">
+                                <p className="text-secondary text-center text-xl md:text-2xl mb-8 font-semibold">Space Code -&nbsp;</p>
+                                <button onClick={copySpaceCode}>
+                                    <p className="text-primary text-center text-xl md:text-2xl mb-8 font-semibold">{data.data.spaceCode}</p>
+                                </button>
+                            </div>
+                        </div>
+
+                        { showAlert &&
+                            <div className="grid place-items-center">
+                                <div className="text-white px-6 py-4 border-0 md:w-2/3 rounded relative mb-4 bg-primary">
+                                    <span className="text-xl inline-block mr-5 align-middle">
+                                        <FaCheckCircle/>
+                                    </span>
+                                    <span className="inline-block align-middle mr-8">
+                                       Copied to clipboard
+                                    </span>
+                                    <button onClick={closeAlert} className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none">
+                                        <span>×</span>
+                                    </button>
+                                </div>
+                            </div>
+                        }
+
                         <div className="md:grid md:grid-cols-4 md:flex md:gap-y-8 md:justify-items-center md:items-center">
                             <div className="col-span-2 space-x-4 mt-4 pb-4">
                                 <div className="md:grid md:justify-items-center">
                                     <FaMapMarkerAlt className="text-2xl ml-4"/>
                                 </div>
-                                <p className="truncate text-xl pt-4">{data.data.venue}</p>
+                                <p className="text-xl pt-4">{data.data.venue}</p>
                             </div>
                             <div className="col-span-2 space-x-4 mt-4 pb-4">
                                 <div className="md:grid md:justify-items-center">
                                     <FaRegClock className="text-2xl ml-4"/>
                                 </div>
-                                <p className="tracking-wider md:tracking-widest text-xl pt-4">{local.getDay()}/{local.getMonth() + 1}/{local.getFullYear()} {local.getHours()}:{local.getMinutes() < 10 ? '0'+local.getMinutes() : local.getMinutes()}</p>
+                                <p className="tracking-wider md:tracking-widest text-xl pt-4">{DateFormater(data.data.startDateTime)}</p>
                             </div>
                             <div className="col-span-2 space-x-4 mt-4 pb-4">
                                 <div className="md:grid md:justify-items-center">
                                     <FaRibbon className="text-2xl ml-4"/>
                                 </div>
-                                <p className="truncate text-xl pt-4">{state}</p>
+                                <p className="text-xl pt-4">{state}</p>
                             </div>
                             <div className="col-span-2 space-x-4 mt-4 pb-4">
                                 <div className="md:grid md:justify-items-center">
                                     <FaUserFriends className="text-2xl ml-4"/>
                                 </div>
-                                <p className="truncate text-xl pt-4">{data.data.memberCount} Member(s)</p>
+                                <p className="text-xl pt-4">{data.data.memberCount} Member(s)</p>
                             </div>
                         </div>
                     </div>
