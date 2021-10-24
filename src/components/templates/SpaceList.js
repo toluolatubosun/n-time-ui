@@ -29,15 +29,15 @@ const SpaceList = ({ spaces }) => {
                     <div className="shadow rounded bg-gradient-to-t from-gray-100 to-white mx-4 md:mx-20 mb-4 md:mb-10 p-4 md:p-10">
                         <h1 className="text-secondary text-2xl md:text-3xl font-semibold truncate">{space.space.name}</h1>
                         <div className="flex md:text-lg items-center space-x-4 mt-4">
-                            <FaMapMarkerAlt/>
+                            <FaMapMarkerAlt className="text-primary"/>
                             <p className="truncate ">{space.space.venue}</p>
                         </div>
                         <div className="flex  md:text-lg items-center space-x-4 mt-4">
-                            <FaRegClock/>
+                            <FaRegClock className="text-primary"/>
                             <p className="tracking-wider md:tracking-widest">{DateFormater(space.space.startDateTime)}</p>
                         </div>
                         <div className="flex  md:text-lg items-center space-x-4 mt-4">
-                            <FaRibbon/>
+                            <FaRibbon className="text-primary"/>
                             <p>{state}</p>
                         </div>
                     </div>
